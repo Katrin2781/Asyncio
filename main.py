@@ -48,7 +48,6 @@ async def insert_people(people_chunk):
             for person_json in people_chunk:
                 if person_json.get("status") == 404:
                     break
-                # print(' --> import..', person_json['url'], person_json)
                 homeworld_str = await get_deep_data(
                     [person_json["homeworld"]], "name", session_deep
                 )
